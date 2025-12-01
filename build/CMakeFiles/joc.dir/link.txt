@@ -1,0 +1,1 @@
+/usr/bin/c++ -rdynamic CMakeFiles/joc.dir/main.cpp.o -o joc  /home/iulia/inter/raylib/src/libraylib.a -lm -lpthread -ldl -lrt -lX11 -lXrandr -lXi 

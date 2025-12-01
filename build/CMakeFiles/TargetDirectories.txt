@@ -1,0 +1,3 @@
+/home/iulia/snakey/build/CMakeFiles/joc.dir
+/home/iulia/snakey/build/CMakeFiles/edit_cache.dir
+/home/iulia/snakey/build/CMakeFiles/rebuild_cache.dir
