@@ -3,7 +3,6 @@ project(joc)
 
 set(CMAKE_CXX_STANDARD 17)
 
-# Locația instalării raylib (static) în home/inter
 set(RAYLIB_ROOT "/home/iulia/inter/raylib")
 
 add_library(raylib STATIC IMPORTED)
