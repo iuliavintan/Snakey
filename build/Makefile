@@ -153,6 +153,30 @@ Food.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/joc.dir/build.make CMakeFiles/joc.dir/Food.cpp.s
 .PHONY : Food.cpp.s
 
+Game.o: Game.cpp.o
+.PHONY : Game.o
+
+# target to build an object file
+Game.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/joc.dir/build.make CMakeFiles/joc.dir/Game.cpp.o
+.PHONY : Game.cpp.o
+
+Game.i: Game.cpp.i
+.PHONY : Game.i
+
+# target to preprocess a source file
+Game.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/joc.dir/build.make CMakeFiles/joc.dir/Game.cpp.i
+.PHONY : Game.cpp.i
+
+Game.s: Game.cpp.s
+.PHONY : Game.s
+
+# target to generate assembly for a file
+Game.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/joc.dir/build.make CMakeFiles/joc.dir/Game.cpp.s
+.PHONY : Game.cpp.s
+
 Snake.o: Snake.cpp.o
 .PHONY : Snake.o
 
@@ -237,6 +261,9 @@ help:
 	@echo "... Food.o"
 	@echo "... Food.i"
 	@echo "... Food.s"
+	@echo "... Game.o"
+	@echo "... Game.i"
+	@echo "... Game.s"
 	@echo "... Snake.o"
 	@echo "... Snake.i"
 	@echo "... Snake.s"

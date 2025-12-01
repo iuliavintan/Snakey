@@ -1,4 +1,4 @@
-CMakeFiles/joc.dir/main.cpp.o: /home/iulia/snakey/main.cpp \
+CMakeFiles/joc.dir/Game.cpp.o: /home/iulia/snakey/Game.cpp \
  /usr/include/stdc-predef.h /usr/include/c++/12/iostream \
  /usr/include/x86_64-linux-gnu/c++/12/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/12/bits/os_defines.h \
