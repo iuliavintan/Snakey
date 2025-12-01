@@ -1,5 +1,6 @@
-CMakeFiles/joc.dir/main.cpp.o: /home/iulia/snakey/main.cpp \
- /usr/include/stdc-predef.h /usr/include/c++/12/iostream \
+CMakeFiles/joc.dir/defines.cpp.o: /home/iulia/snakey/defines.cpp \
+ /usr/include/stdc-predef.h /home/iulia/snakey/defines.hpp \
+ /usr/include/c++/12/iostream \
  /usr/include/x86_64-linux-gnu/c++/12/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/12/bits/os_defines.h \
  /usr/include/features.h /usr/include/features-time64.h \
@@ -173,4 +174,4 @@ CMakeFiles/joc.dir/main.cpp.o: /home/iulia/snakey/main.cpp \
  /usr/include/c++/12/tr1/modified_bessel_func.tcc \
  /usr/include/c++/12/tr1/poly_hermite.tcc \
  /usr/include/c++/12/tr1/poly_laguerre.tcc \
- /usr/include/c++/12/tr1/riemann_zeta.tcc /home/iulia/snakey/defines.hpp
+ /usr/include/c++/12/tr1/riemann_zeta.tcc

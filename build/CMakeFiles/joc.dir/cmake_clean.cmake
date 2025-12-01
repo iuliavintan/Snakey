@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/joc.dir/defines.cpp.o"
+  "CMakeFiles/joc.dir/defines.cpp.o.d"
   "CMakeFiles/joc.dir/main.cpp.o"
   "CMakeFiles/joc.dir/main.cpp.o.d"
   "joc"

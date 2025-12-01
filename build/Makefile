@@ -129,6 +129,30 @@ joc/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/joc.dir/build.make CMakeFiles/joc.dir/build
 .PHONY : joc/fast
 
+defines.o: defines.cpp.o
+.PHONY : defines.o
+
+# target to build an object file
+defines.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/joc.dir/build.make CMakeFiles/joc.dir/defines.cpp.o
+.PHONY : defines.cpp.o
+
+defines.i: defines.cpp.i
+.PHONY : defines.i
+
+# target to preprocess a source file
+defines.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/joc.dir/build.make CMakeFiles/joc.dir/defines.cpp.i
+.PHONY : defines.cpp.i
+
+defines.s: defines.cpp.s
+.PHONY : defines.s
+
+# target to generate assembly for a file
+defines.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/joc.dir/build.make CMakeFiles/joc.dir/defines.cpp.s
+.PHONY : defines.cpp.s
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -162,6 +186,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... joc"
+	@echo "... defines.o"
+	@echo "... defines.i"
+	@echo "... defines.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

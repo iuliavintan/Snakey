@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/home/iulia/snakey/defines.cpp" "CMakeFiles/joc.dir/defines.cpp.o" "gcc" "CMakeFiles/joc.dir/defines.cpp.o.d"
   "/home/iulia/snakey/main.cpp" "CMakeFiles/joc.dir/main.cpp.o" "gcc" "CMakeFiles/joc.dir/main.cpp.o.d"
   )
 
