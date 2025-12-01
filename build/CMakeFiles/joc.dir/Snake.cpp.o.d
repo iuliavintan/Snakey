@@ -1,4 +1,4 @@
-CMakeFiles/joc.dir/main.cpp.o: /home/iulia/snakey/main.cpp \
+CMakeFiles/joc.dir/Snake.cpp.o: /home/iulia/snakey/Snake.cpp \
  /usr/include/stdc-predef.h /usr/include/c++/12/iostream \
  /usr/include/x86_64-linux-gnu/c++/12/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/12/bits/os_defines.h \

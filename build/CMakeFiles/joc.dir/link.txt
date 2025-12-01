@@ -1,1 +1,1 @@
-/usr/bin/c++ -rdynamic CMakeFiles/joc.dir/main.cpp.o CMakeFiles/joc.dir/defines.cpp.o -o joc  /home/iulia/inter/raylib/src/libraylib.a -lm -lpthread -ldl -lrt -lX11 -lXrandr -lXi 
+/usr/bin/c++ -rdynamic CMakeFiles/joc.dir/main.cpp.o CMakeFiles/joc.dir/defines.cpp.o CMakeFiles/joc.dir/Food.cpp.o CMakeFiles/joc.dir/Snake.cpp.o -o joc  /home/iulia/inter/raylib/src/libraylib.a -lm -lpthread -ldl -lrt -lX11 -lXrandr -lXi 

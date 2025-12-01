@@ -129,6 +129,54 @@ joc/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/joc.dir/build.make CMakeFiles/joc.dir/build
 .PHONY : joc/fast
 
+Food.o: Food.cpp.o
+.PHONY : Food.o
+
+# target to build an object file
+Food.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/joc.dir/build.make CMakeFiles/joc.dir/Food.cpp.o
+.PHONY : Food.cpp.o
+
+Food.i: Food.cpp.i
+.PHONY : Food.i
+
+# target to preprocess a source file
+Food.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/joc.dir/build.make CMakeFiles/joc.dir/Food.cpp.i
+.PHONY : Food.cpp.i
+
+Food.s: Food.cpp.s
+.PHONY : Food.s
+
+# target to generate assembly for a file
+Food.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/joc.dir/build.make CMakeFiles/joc.dir/Food.cpp.s
+.PHONY : Food.cpp.s
+
+Snake.o: Snake.cpp.o
+.PHONY : Snake.o
+
+# target to build an object file
+Snake.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/joc.dir/build.make CMakeFiles/joc.dir/Snake.cpp.o
+.PHONY : Snake.cpp.o
+
+Snake.i: Snake.cpp.i
+.PHONY : Snake.i
+
+# target to preprocess a source file
+Snake.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/joc.dir/build.make CMakeFiles/joc.dir/Snake.cpp.i
+.PHONY : Snake.cpp.i
+
+Snake.s: Snake.cpp.s
+.PHONY : Snake.s
+
+# target to generate assembly for a file
+Snake.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/joc.dir/build.make CMakeFiles/joc.dir/Snake.cpp.s
+.PHONY : Snake.cpp.s
+
 defines.o: defines.cpp.o
 .PHONY : defines.o
 
@@ -186,6 +234,12 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... joc"
+	@echo "... Food.o"
+	@echo "... Food.i"
+	@echo "... Food.s"
+	@echo "... Snake.o"
+	@echo "... Snake.i"
+	@echo "... Snake.s"
 	@echo "... defines.o"
 	@echo "... defines.i"
 	@echo "... defines.s"

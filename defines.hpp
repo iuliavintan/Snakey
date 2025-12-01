@@ -25,4 +25,6 @@ bool EventTriggered(double interval);
 
 bool ElementInDeque(Vector2 element, std::deque<Vector2> deq);
 
+void menu(int window_width, Rectangle startButton, bool hoverStart);
+
 #endif

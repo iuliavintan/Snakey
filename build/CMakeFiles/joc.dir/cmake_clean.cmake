@@ -1,4 +1,8 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/joc.dir/Food.cpp.o"
+  "CMakeFiles/joc.dir/Food.cpp.o.d"
+  "CMakeFiles/joc.dir/Snake.cpp.o"
+  "CMakeFiles/joc.dir/Snake.cpp.o.d"
   "CMakeFiles/joc.dir/defines.cpp.o"
   "CMakeFiles/joc.dir/defines.cpp.o.d"
   "CMakeFiles/joc.dir/main.cpp.o"

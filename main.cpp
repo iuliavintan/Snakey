@@ -3,74 +3,8 @@
 #include<deque>
 #include<raymath.h>
 #include"defines.hpp"
-
-class Food{
-
-	public:
-		Vector2 position;
-		Texture2D texture;
-
-		Food(std::deque<Vector2> snakeBody){
-			Image img=LoadImage("graphics/mar.png");
-			ImageResize(&img, cellSize, cellSize);
-			texture=LoadTextureFromImage(img);
-			UnloadImage(img);
-			position=genrateRandomPos(snakeBody);
-		}
-
-		~Food(){
-			UnloadTexture(texture);
-		}
-
-		void Draw(){
-			if (texture.id != 0) {
-				DrawTexture(texture, offset+1 + position.x * cellSize, offset +1+ position.y * cellSize, RAYWHITE);
-			}
-		}
-
-		Vector2 generateRandomCell(){
-			float x = GetRandomValue(0, cellCount-1);
-			float y = GetRandomValue(0, cellCount-1);
-			return Vector2{x,y};
-		}
-
-		Vector2 genrateRandomPos(std::deque<Vector2> snakeBody){
-			Vector2 position=generateRandomCell();
-			while(ElementInDeque(position, snakeBody))
-			{
-				position=generateRandomCell();
-			}
-			return position;
-		}
-};
-
-class Snake{
-
-	public:
-		std::deque<Vector2> body = {Vector2{6,9}, Vector2{5,9}, Vector2{4,9}};
-		Vector2 direction=Vector2{1,0};
-		bool addSeg=false;
-
-		void Draw(){
-			for(int i=0; i<body.size(); i++){
-				Rectangle bucata = Rectangle{body[i].x * cellSize +offset, body[i].y * cellSize+offset, (float)cellSize, (float)cellSize};
-				DrawRectangleRounded(bucata, 0.5, body.size(), SNAKE);
-			}
-		}
-
-		void updatePos(){
-			if(addSeg){
-				addSeg=false;
-			}else{
-				body.pop_back();
-			}
-			body.push_front(Vector2Add(body[0], direction));
-		}
-
-		void Reset(){
-			body={Vector2{6,9}, Vector2{5,9}, Vector2{4,9}};
-		}
-};
+#include"Food.hpp"
+#include"Snake.hpp"
 
 class Game{
 	public:
@@ -140,31 +74,7 @@ class Game{
 		}
 };
 
-void menu(int window_width, Rectangle startButton, bool hoverStart)
-{
-	const char* title = "LET'S PLAY!";
-				int fontSize = 40;
-				int titleWidth = MeasureText(title, fontSize);
-				DrawText(title,
-						window_width/2 - titleWidth/2,
-						window_width/2 - 100,
-						fontSize,
-						(Color){220, 240, 255, 255}); 
 
-				Color buttonColor = hoverStart
-					? (Color){80, 170, 255, 255}  
-					: (Color){30, 60, 110, 255};  
-
-				DrawRectangleRec(startButton, buttonColor);
-				const char* btnText = "START";
-				int btnFontSize = 20;
-				int textW = MeasureText(btnText, btnFontSize);
-				DrawText(btnText,
-						startButton.x + startButton.width/2 - textW/2,
-						startButton.y + startButton.height/2 - btnFontSize/2,
-						btnFontSize,
-						RAYWHITE);
-}
 
 
 int main(void){

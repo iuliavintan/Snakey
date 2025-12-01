@@ -81,12 +81,12 @@ clean: CMakeFiles/joc.dir/clean
 CMakeFiles/joc.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/joc.dir/build.make CMakeFiles/joc.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/joc.dir/build.make CMakeFiles/joc.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/iulia/snakey/build/CMakeFiles --progress-num=1,2,3 "Built target joc"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/iulia/snakey/build/CMakeFiles --progress-num=1,2,3,4,5 "Built target joc"
 .PHONY : CMakeFiles/joc.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/joc.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/iulia/snakey/build/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/iulia/snakey/build/CMakeFiles 5
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/joc.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/iulia/snakey/build/CMakeFiles 0
 .PHONY : CMakeFiles/joc.dir/rule
