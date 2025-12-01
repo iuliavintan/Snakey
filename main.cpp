@@ -103,10 +103,16 @@ class Game{
 		Snake snake=Snake();
 		Food food=Food(snake.body);
 		bool running=true;
+		int score=0;
+		int high_score=0;
 
 		void Draw(){
 			food.Draw();
 			snake.Draw();
+			if(!running){
+				DrawText("GAME OVER:(", 550, offset+cellSize*cellCount+10 ,40 , SNAKE);
+
+			}
 		}
 
 		void Update(){
@@ -115,6 +121,7 @@ class Game{
 				CheckCollisionWithFood();
 				CheckCollisionWithEdges();
 				CheckCollisionWithTail();
+				CheckHighScore();
 			}
 		}
 
@@ -124,6 +131,7 @@ class Game{
 			if(Vector2Equals(snake.body[0], food.position)){
 				food.position=food.genrateRandomPos(snake.body);
 				snake.addSeg=true;
+				score++;
 			}
 		}
 
@@ -146,10 +154,17 @@ class Game{
 			}
 		}
 
+		void CheckHighScore(){
+			if(high_score<score)
+				high_score=score;
+		}
+
 		void GameOver(){
 			snake.Reset();
 			food.position=food.genrateRandomPos(snake.body);
 			running=false;
+			score=0;
+			// DrawText("GAME OVER:(", offset-5, offset+cellSize*cellCount+10 ,40 , SNAKE);
 		}
 };
 
@@ -188,6 +203,8 @@ int main(void){
 			ClearBackground(BACKGROUND);
 			DrawRectangleLinesEx(Rectangle{(float)offset-5, (float)offset-5, (float)cellSize*cellCount+10, (float)cellSize*cellCount+10}, 5, SNAKE);
 			DrawText("Snake", offset-5, 20, 40,SNAKE);
+			DrawText(TextFormat("%i", game.score) ,offset-5, offset+cellSize*cellCount+10 ,40 , SNAKE);
+			DrawText(TextFormat("HighScore:%i", game.high_score), 600, 20, 40,SNAKE);
 			game.Draw();
 			EndDrawing();
 		}
