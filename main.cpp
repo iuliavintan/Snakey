@@ -3,12 +3,13 @@
 #include<deque>
 #include<raymath.h>
 
-Color BACKGROUND={10, 20, 40, 255};
+Color BACKGROUND={ 12, 35, 20, 255 };
 Color UI = { 220, 240, 255, 255 };
-Color SNAKE = { 80, 170, 255, 255 };
+Color SNAKE = { 50, 205, 95, 255 };
 
 int cellSize=30;
 int cellCount=25;
+int offset=75;
 
 double lastUpdateTime=0;
 
@@ -21,18 +22,26 @@ bool EventTriggered(double interval){
 	return false;
 }
 
+bool ElementInDeque(Vector2 element, std::deque<Vector2> deq){
+	for(int i=0; i<deq.size(); i++){
+		if(Vector2Equals(deq[i], element))
+			return true;
+	}
+	return false;
+}
+
 class Food{
 
 	public:
 		Vector2 position;
 		Texture2D texture;
 
-		Food(){
+		Food(std::deque<Vector2> snakeBody){
 			Image img=LoadImage("graphics/mar.png");
 			ImageResize(&img, cellSize, cellSize);
 			texture=LoadTextureFromImage(img);
 			UnloadImage(img);
-			position=genrateRandomPos();
+			position=genrateRandomPos(snakeBody);
 		}
 
 		~Food(){
@@ -41,14 +50,23 @@ class Food{
 
 		void Draw(){
 			if (texture.id != 0) {
-				DrawTexture(texture, position.x * cellSize, position.y * cellSize, RAYWHITE);
+				DrawTexture(texture, offset+1 + position.x * cellSize, offset +1+ position.y * cellSize, RAYWHITE);
 			}
 		}
 
-		Vector2 genrateRandomPos(){
+		Vector2 generateRandomCell(){
 			float x = GetRandomValue(0, cellCount-1);
 			float y = GetRandomValue(0, cellCount-1);
 			return Vector2{x,y};
+		}
+
+		Vector2 genrateRandomPos(std::deque<Vector2> snakeBody){
+			Vector2 position=generateRandomCell();
+			while(ElementInDeque(position, snakeBody))
+			{
+				position=generateRandomCell();
+			}
+			return position;
 		}
 };
 
@@ -57,25 +75,34 @@ class Snake{
 	public:
 		std::deque<Vector2> body = {Vector2{6,9}, Vector2{5,9}, Vector2{4,9}};
 		Vector2 direction=Vector2{1,0};
+		bool addSeg=false;
 
 		void Draw(){
 			for(int i=0; i<body.size(); i++){
-				Rectangle bucata = Rectangle{body[i].x * cellSize, body[i].y * cellSize, (float)cellSize, (float)cellSize};
+				Rectangle bucata = Rectangle{body[i].x * cellSize +offset, body[i].y * cellSize+offset, (float)cellSize, (float)cellSize};
 				DrawRectangleRounded(bucata, 0.5, body.size(), SNAKE);
 			}
 		}
 
 		void updatePos(){
-			body.pop_back();
+			if(addSeg){
+				addSeg=false;
+			}else{
+				body.pop_back();
+			}
 			body.push_front(Vector2Add(body[0], direction));
 		}
 
+		void Reset(){
+			body={Vector2{6,9}, Vector2{5,9}, Vector2{4,9}};
+		}
 };
 
 class Game{
 	public:
 		Snake snake=Snake();
-		Food food=Food();
+		Food food=Food(snake.body);
+		bool running=true;
 
 		void Draw(){
 			food.Draw();
@@ -83,14 +110,55 @@ class Game{
 		}
 
 		void Update(){
-			snake.updatePos();
+			if(running){
+				snake.updatePos();
+				CheckCollisionWithFood();
+				CheckCollisionWithEdges();
+				CheckCollisionWithTail();
+			}
+		}
+
+		
+
+		void CheckCollisionWithFood(){
+			if(Vector2Equals(snake.body[0], food.position)){
+				food.position=food.genrateRandomPos(snake.body);
+				snake.addSeg=true;
+			}
+		}
+
+		void CheckCollisionWithEdges(){
+			if(snake.body[0].x==cellCount || snake.body[0].x==-1){
+				GameOver();
+			}
+			if(snake.body[0].y==cellCount || snake.body[0].y==-1){
+				GameOver();
+			}
+		}
+
+		void CheckCollisionWithTail(){
+			std::deque<Vector2> headless=snake.body;
+			headless.pop_front();
+			for(int i=0; i<headless.size(); i++)
+			{
+				if(headless[i]==snake.body[0])
+					GameOver();
+			}
+		}
+
+		void GameOver(){
+			snake.Reset();
+			food.position=food.genrateRandomPos(snake.body);
+			running=false;
 		}
 };
+
+
 
 int main(void){
 	
 	std::cout<<"Let's start!"<<std::endl;
-	InitWindow(cellSize*cellCount, cellSize*cellCount, "SnakeySnake");
+	InitWindow(2*offset + cellSize*cellCount, 2*offset + cellSize*cellCount, "SnakeySnake");
 	SetTargetFPS(60);
 
 	
@@ -105,15 +173,21 @@ int main(void){
 
 			if((IsKeyPressed(KEY_UP) || IsKeyPressed(KEY_W)) && game.snake.direction.y!=1){
 				game.snake.direction={0,-1};	
+				game.running=true;
 			}else if((IsKeyPressed(KEY_DOWN) || IsKeyPressed(KEY_S)) && game.snake.direction.y!=-1){
 				game.snake.direction={0,1};
+				game.running=true;
 			}else if((IsKeyPressed(KEY_LEFT) || IsKeyPressed(KEY_A)) && game.snake.direction.x!=1){
 				game.snake.direction={-1,0};
+				game.running=true;
 			}else if((IsKeyPressed(KEY_RIGHT) || IsKeyPressed(KEY_D)) && game.snake.direction.x!=-1){
 				game.snake.direction={1,0};
+				game.running=true;
 			}
 
 			ClearBackground(BACKGROUND);
+			DrawRectangleLinesEx(Rectangle{(float)offset-5, (float)offset-5, (float)cellSize*cellCount+10, (float)cellSize*cellCount+10}, 5, SNAKE);
+			DrawText("Snake", offset-5, 20, 40,SNAKE);
 			game.Draw();
 			EndDrawing();
 		}
