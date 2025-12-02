@@ -3,6 +3,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/joc.dir/Food.cpp.o.d"
   "CMakeFiles/joc.dir/Game.cpp.o"
   "CMakeFiles/joc.dir/Game.cpp.o.d"
+  "CMakeFiles/joc.dir/Game_2Players.cpp.o"
+  "CMakeFiles/joc.dir/Game_2Players.cpp.o.d"
   "CMakeFiles/joc.dir/Snake.cpp.o"
   "CMakeFiles/joc.dir/Snake.cpp.o.d"
   "CMakeFiles/joc.dir/defines.cpp.o"

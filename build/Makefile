@@ -177,6 +177,30 @@ Game.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/joc.dir/build.make CMakeFiles/joc.dir/Game.cpp.s
 .PHONY : Game.cpp.s
 
+Game_2Players.o: Game_2Players.cpp.o
+.PHONY : Game_2Players.o
+
+# target to build an object file
+Game_2Players.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/joc.dir/build.make CMakeFiles/joc.dir/Game_2Players.cpp.o
+.PHONY : Game_2Players.cpp.o
+
+Game_2Players.i: Game_2Players.cpp.i
+.PHONY : Game_2Players.i
+
+# target to preprocess a source file
+Game_2Players.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/joc.dir/build.make CMakeFiles/joc.dir/Game_2Players.cpp.i
+.PHONY : Game_2Players.cpp.i
+
+Game_2Players.s: Game_2Players.cpp.s
+.PHONY : Game_2Players.s
+
+# target to generate assembly for a file
+Game_2Players.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/joc.dir/build.make CMakeFiles/joc.dir/Game_2Players.cpp.s
+.PHONY : Game_2Players.cpp.s
+
 Snake.o: Snake.cpp.o
 .PHONY : Snake.o
 
@@ -264,6 +288,9 @@ help:
 	@echo "... Game.o"
 	@echo "... Game.i"
 	@echo "... Game.s"
+	@echo "... Game_2Players.o"
+	@echo "... Game_2Players.i"
+	@echo "... Game_2Players.s"
 	@echo "... Snake.o"
 	@echo "... Snake.i"
 	@echo "... Snake.s"

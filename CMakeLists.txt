@@ -11,7 +11,7 @@ set_target_properties(raylib PROPERTIES
     INTERFACE_INCLUDE_DIRECTORIES "${RAYLIB_ROOT}/src"
 )
 
-add_executable(joc main.cpp defines.cpp Food.cpp Snake.cpp Game.cpp)
+add_executable(joc main.cpp defines.cpp Food.cpp Snake.cpp Game.cpp Game_2Players.cpp)
 target_link_libraries(joc
     raylib
     m

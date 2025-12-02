@@ -11,11 +11,19 @@ Food::Food(std::deque<Vector2> snakeBody){
 			ImageResize(&img, cellSize, cellSize);
 			texture=LoadTextureFromImage(img);
 			UnloadImage(img);
-			position=genrateRandomPos(snakeBody);
+			position = genrateRandomPos(snakeBody);
 		}
 
 Food::~Food(){
 			UnloadTexture(texture);
+		}
+
+Vector2 Food::GetPosition() const{
+			return position;
+		}
+
+void Food::SetPosition(const Vector2& newPosition){
+			position = newPosition;
 		}
 
 void Food::Draw(){
@@ -38,4 +46,5 @@ Vector2 Food::genrateRandomPos(std::deque<Vector2> snakeBody){
 			}
 			return position;
 		}   
+
 

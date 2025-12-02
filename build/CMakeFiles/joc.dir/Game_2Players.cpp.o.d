@@ -1,5 +1,6 @@
-CMakeFiles/joc.dir/main.cpp.o: /home/iulia/snakey/main.cpp \
- /usr/include/stdc-predef.h /usr/include/c++/12/iostream \
+CMakeFiles/joc.dir/Game_2Players.cpp.o: \
+ /home/iulia/snakey/Game_2Players.cpp /usr/include/stdc-predef.h \
+ /usr/include/c++/12/iostream \
  /usr/include/x86_64-linux-gnu/c++/12/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/12/bits/os_defines.h \
  /usr/include/features.h /usr/include/features-time64.h \
@@ -147,8 +148,8 @@ CMakeFiles/joc.dir/main.cpp.o: /home/iulia/snakey/main.cpp \
  /usr/include/c++/12/bits/basic_ios.tcc \
  /usr/include/c++/12/bits/ostream.tcc /usr/include/c++/12/istream \
  /usr/include/c++/12/bits/istream.tcc \
- /home/iulia/inter/raylib/src/raylib.h /usr/include/c++/12/deque \
- /usr/include/c++/12/bits/stl_uninitialized.h \
+ /home/iulia/inter/raylib/src/raylib.h /home/iulia/snakey/Game.hpp \
+ /usr/include/c++/12/deque /usr/include/c++/12/bits/stl_uninitialized.h \
  /usr/include/c++/12/bits/stl_deque.h /usr/include/c++/12/bits/deque.tcc \
  /home/iulia/inter/raylib/src/raymath.h /usr/include/c++/12/math.h \
  /usr/include/c++/12/cmath /usr/include/math.h \
@@ -175,4 +176,4 @@ CMakeFiles/joc.dir/main.cpp.o: /home/iulia/snakey/main.cpp \
  /usr/include/c++/12/tr1/poly_laguerre.tcc \
  /usr/include/c++/12/tr1/riemann_zeta.tcc /home/iulia/snakey/defines.hpp \
  /home/iulia/snakey/Food.hpp /home/iulia/snakey/Snake.hpp \
- /home/iulia/snakey/Game.hpp /home/iulia/snakey/Game_2Players.hpp
+ /home/iulia/snakey/Game_2Players.hpp

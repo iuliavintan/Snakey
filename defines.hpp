@@ -18,13 +18,14 @@ extern double lastUpdateTime;
 
 enum class GameState {
     MENU,
-    GAMEPLAY
+    GAMEPLAY,
+    TWO_PLAYERS
 };
 
 bool EventTriggered(double interval);
 
 bool ElementInDeque(Vector2 element, std::deque<Vector2> deq);
 
-void menu(int window_width, Rectangle startButton, bool hoverStart);
+void menu(int window_width, Rectangle startButton, Rectangle playersButton, bool hoverStart, bool hoverPlayers);
 
 #endif

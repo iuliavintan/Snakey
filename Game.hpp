@@ -11,25 +11,40 @@
 
 class Game{
 	public:
-		Snake snake=Snake();
-		Food food=Food(snake.body);
-		bool running=true;
-		int score=0;
-		int high_score=0;
+		Game();
 
-		void Draw();
+		virtual void Draw();
 
-		void Update();
+		virtual void Update();
 
-		void CheckCollisionWithFood();
+		virtual void CheckCollisionWithFood();
 
-		void CheckCollisionWithEdges();
+		virtual void CheckCollisionWithEdges();
 
-		void CheckCollisionWithTail();
+		virtual void CheckCollisionWithTail();
 
 		void CheckHighScore();
 
-		void GameOver();
+		virtual void GameOver();
+
+		Snake& GetSnake();
+		const Snake& GetSnake() const;
+
+		bool IsRunning() const;
+		void SetRunning(bool value);
+
+		int GetScore() const;
+		void SetScore(int value);
+
+		int GetHighScore() const;
+		void SetHighScore(int value);
+
+	protected:
+		Snake snake;
+		Food food;
+		bool running;
+		int score;
+		int high_score;
 };
 
 #endif

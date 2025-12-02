@@ -10,6 +10,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/iulia/snakey/Food.cpp" "CMakeFiles/joc.dir/Food.cpp.o" "gcc" "CMakeFiles/joc.dir/Food.cpp.o.d"
   "/home/iulia/snakey/Game.cpp" "CMakeFiles/joc.dir/Game.cpp.o" "gcc" "CMakeFiles/joc.dir/Game.cpp.o.d"
+  "/home/iulia/snakey/Game_2Players.cpp" "CMakeFiles/joc.dir/Game_2Players.cpp.o" "gcc" "CMakeFiles/joc.dir/Game_2Players.cpp.o.d"
   "/home/iulia/snakey/Snake.cpp" "CMakeFiles/joc.dir/Snake.cpp.o" "gcc" "CMakeFiles/joc.dir/Snake.cpp.o.d"
   "/home/iulia/snakey/defines.cpp" "CMakeFiles/joc.dir/defines.cpp.o" "gcc" "CMakeFiles/joc.dir/defines.cpp.o.d"
   "/home/iulia/snakey/main.cpp" "CMakeFiles/joc.dir/main.cpp.o" "gcc" "CMakeFiles/joc.dir/main.cpp.o.d"

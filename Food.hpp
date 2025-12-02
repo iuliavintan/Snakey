@@ -9,9 +9,6 @@
 class Food{
 
 	public:
-		Vector2 position;
-		Texture2D texture;
-
 		Food(std::deque<Vector2> snakeBody);
 
 		~Food();
@@ -21,6 +18,13 @@ class Food{
 		Vector2 generateRandomCell();
 
 		Vector2 genrateRandomPos(std::deque<Vector2> snakeBody);
+
+		Vector2 GetPosition() const;
+		void SetPosition(const Vector2& newPosition);
+
+	private:
+		Vector2 position;
+		Texture2D texture;
 };
 
 #endif
